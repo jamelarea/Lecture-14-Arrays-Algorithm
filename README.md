@@ -147,7 +147,43 @@ SLIDE 10, Exercise
             if (arr[0] < arr[i])
                 arr[0] = arr[i];
         }
-        cout << "Largest element = " << arr[0];
+        cout << "\nLargest number = " << arr[0];
 
         return 0;
     }
+    
+SLIDE 11, Exercise
+
+    #include <iostream>
+    #include <algorithm>
+    #include <array>
+    using namespace std;
+
+    int main()
+    {
+        //variables
+        int i;
+        float arr[10];
+
+        for (i = 0; i < 10; ++i) //ineteger array of 10 numbers
+        {
+            cout << "Enter number " << i + 1 << " : ";
+            cin >> arr[i];
+            while (cin.fail()) {
+                cout << "Invalid input. Please enter a number:";
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cin >> arr[i];
+            }
+        }
+
+        for (i = 1; i < 10; ++i)
+        {
+            if (arr[0] > arr[i])
+                arr[0] = arr[i];
+        }
+        cout << "\nSmallest number = " << arr[0];
+
+        return 0;
+    }
+
